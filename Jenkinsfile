@@ -1,3 +1,38 @@
+pipeline {
+    agent any
+
+    parameters {
+
+    }
+
+    stages {
+        stage('git checkout') {
+            steps{
+            gitcheckout (
+                git branch: 'main', url: 'https://github.com/lakshmanreddy5152/java_app_3.0.git'
+            )    
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 @Library('my-shared-library') _
 
 pipeline{
@@ -111,3 +146,4 @@ pipeline{
         }      
     }
 }
+*/
