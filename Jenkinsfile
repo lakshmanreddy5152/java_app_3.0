@@ -13,7 +13,12 @@ pipeline {
                 git branch: 'main', credentialsId: 'git credentials', url: 'https://github.com/lakshmanreddy5152/java_app_3.0.git'
 
             }
-
         }
+
+        stage('Maven build') {
+            steps {
+                sh "mvn clean install"
+            }
+        }  
     }
 }
