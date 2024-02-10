@@ -35,7 +35,7 @@ pipeline {
 
         stage('Quality gate status check sonar') {
             steps {
-                waitForQualityGate abortPipeline: false, credentialsId: credentialsId
+                waitForQualityGate abortPipeline: false, credentialsId: 'sonarqube-api'
             }
         }  
 
