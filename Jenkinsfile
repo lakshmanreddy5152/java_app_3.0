@@ -10,7 +10,7 @@ pipeline {
         stage('Git checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git 'https://github.com/lakshmanreddy5152/java_app_3.0.git'
+                git branch: 'main', credentialsId: 'git credentials', url: 'https://github.com/lakshmanreddy5152/java_app_3.0.git'
 
             }
 
