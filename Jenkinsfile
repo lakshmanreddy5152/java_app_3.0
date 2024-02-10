@@ -29,14 +29,12 @@ pipeline {
 
         stage('Static code analysys Sonarqube') {
             steps {
-                def SonarQubecredentialsId = 'sonarqube-api'
                 sh 'mvn clean package sonar:sonar'
             }
         }  
 
         stage('Quality gate status check sonar') {
             steps {
-                def SonarQubecredentialsId = 'sonarqube-api'
                 waitForQualityGate abortPipeline: false, credentialsId: credentialsId
             }
         }  
